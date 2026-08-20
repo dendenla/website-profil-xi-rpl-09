@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Kelas - Futuristik 3D</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* 3D Card Container */
+        .card-container {
+            perspective: 1000px;
+        }
+
+        /* 3D Holographic Card */
+        .hologram-card {
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.4) 100%);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+                        0 0 30px rgba(56, 189, 248, 0.1);
+        }
+
+        /* Lapisan Elemen di dalam kartu 3D */
+        .layer-depth-1 {
+            transform: translateZ(40px);
+        }
+        .layer-depth-2 {
+            transform: translateZ(25px);
+        }
+
+        /* Efek Garis Hologram Scanlines */
+        .scanlines {
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(56, 189, 248, 0.05) 50%,
+                rgba(56, 189, 248, 0.05)
+            );
+            background-size: 100% 4px;
+        }
+
+        /* Glow Animasi Halus */
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        .animate-glow {
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-6 relative">
+
+    <!-- Background Futuristic Glow Elements -->
+    <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none animate-glow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none animate-glow"></div>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-2xl card-container z-10">
+        
+        <!-- Kartu 3D Profil Kelas -->
+        <div id="holoCard" class="hologram-card scanlines rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+            
+            <!-- Aksen Sudut Teknologi -->
+            <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-cyan-400"></div>
+            <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-cyan-400"></div>
+            <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-cyan-400"></div>
+            <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-cyan-400"></div>
+
+            <!-- Header: Nama Kelas & Sekolah -->
+            <div class="layer-depth-1 mb-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center border-b border-cyan-500/20 pb-6">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-cyan-400 font-orbitron font-semibold">Sistem Induk Kelas</span>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold font-orbitron text-white tracking-wider mt-1 drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]">
+                        XII - RPL 1
+                    </h1>
+                </div>
+                <div class="mt-4 sm:mt-0 text-right">
+                    <span class="text-xs text-slate-400 block font-mono">INSTITUTION</span>
+                    <span class="text-sm font-semibold text-cyan-200 font-orbitron">SMK NEGERI 1 CYBER</span>
+                </div>
+            </div>
+
+            <!-- Konten Utama: Program Keahlian & Deskripsi -->
+            <div class="space-y-6 layer-depth-2">
+                
+                <!-- Program Keahlian -->
+                <div class="bg-slate-900/60 border border-cyan-500/30 rounded-xl p-4 backdrop-blur-md">
+                    <span class="text-xs uppercase font-mono text-cyan-400 block mb-1">Program Keahlian</span>
+                    <p class="text-lg font-semibold text-white tracking-wide">
+                        Pengembangan Perangkat Lunak dan Gim (PPLG)
+                    </p>
+                </div>
+
+                <!-- Deskripsi Kelas -->
+                <div>
+                    <h3 class="text-xs uppercase font-mono text-cyan-400 mb-2">Deskripsi Kelas</h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justify">
+                        Komunitas belajar elit yang berfokus pada eksplorasi logika pemrograman tingkat lanjut, rekayasa perangkat lunak modern, pengembangan kecerdasan buatan, serta penciptaan solusi digital masa depan yang inovatif dan berdaya saing global.
+                    </p>
+                </div>
+
+                <!-- Visi Kelas -->
+                <div class="relative bg-gradient-to-r from-cyan-950/40 to-blue-950/40 border-l-4 border-cyan-400 p-4 rounded-r-xl">
+                    <h3 class="text-xs uppercase font-mono text-cyan-400 mb-1">Visi Kelas</h3>
+                    <p class="text-cyan-100 font-medium italic text-sm sm:text-base">
+                        "Membentuk Technopreneur Muda yang Unggul, Berkarakter Global, dan Menjadi Pionir Inovasi Teknologi Masa Depan."
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Footer Card -->
+            <div class="layer-depth-1 mt-8 pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-500 font-mono">
+                <span>STATUS: ACTIVE_SYNC</span>
+                <span class="text-cyan-400">SECURE_ID_2026</span>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Script Interaktif Efek 3D Tilt (Gerakan Mouse) -->
+    <script>
+        const card = document.getElementById('holoCard');
+        const container = document.querySelector('.card-container');
+
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left; // koordinat X mouse dalam card
+            const y = e.clientY - rect.top;  // koordinat Y mouse dalam card
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Hitung sudut rotasi maksimal 15 derajat
+            const rotateX = -((y - centerY) / centerY) * 12;
+            const rotateY = ((x - centerX) / centerX) * 12;
+
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        // Kembalikan ke posisi semula saat mouse keluar
+        container.addEventListener('mouseleave', () => {
+            card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            card.style.transition = 'transform 0.5s ease-in-out';
+        });
+
+        container.addEventListener('mouseenter', () => {
+            card.style.transition = 'transform 0.1s ease-out';
+        });
+    </script>
+</body>
+</html>
