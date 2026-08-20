@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anggota | XI RPL 09</title>
+    <!-- Three.js Library untuk efek 3D Luar Angkasa -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+      :root {
+        --text: #e8fbff;
+        --muted: #a9d3df;
+        --white: #ffffff;
+        --foam: #d9fff7;
+        --cyan-light: #7ff5e5;
+        --glow: rgba(127, 245, 229, 0.6);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Trebuchet MS", Arial, sans-serif;
+        color: var(--text);
+        background-color: #030712;
+        overflow-x: hidden;
+      }
+
+      /* Canvas 3D Latar Belakang */
+      #space-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* === HEADER === */
+      header {
+        padding: 24px 8%;
+        color: var(--white);
+        background: rgba(3, 7, 18, 0.4);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(127, 245, 229, 0.15);
+        position: relative;
+        z-index: 10;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      .logo {
+        margin: 0;
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+        font-weight: bold;
+        text-shadow: 0 0 10px var(--glow);
+      }
+
+      .back-link {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+
+      .school-link {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .school-link a {
+        color: var(--foam);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s;
+      }
+
+      .school-link a:hover,
+      .back-link:hover {
+        color: var(--cyan-light);
+        text-shadow: 0 0 8px #7ff5e5;
+      }
+
+      /* === MAIN CONTENT === */
+      main {
+        max-width: 1100px;
+        margin: auto;
+        padding: 60px 8%;
+        position: relative;
+        z-index: 10;
+      }
+
+      .intro {
+        max-width: 720px;
+        margin-bottom: 42px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--cyan-light);
+        font-size: 0.85rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px #7ff5e5;
+      }
+
+      h1 {
+        margin: 0 0 14px;
+        color: var(--white);
+        font-size: clamp(2.2rem, 5vw, 3.8rem);
+        line-height: 1.1;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+
+      .intro p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      /* === CARD BIODATA TRANSPARAN === */
+      .member-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 22px;
+      }
+
+      .member-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 26px;
+        color: var(--text);
+        background: rgba(8, 25, 55, 0.4);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(127, 245, 229, 0.25);
+        border-radius: 16px;
+        box-shadow: 0 0 30px rgba(8, 126, 139, 0.2);
+        overflow: hidden;
+        animation: card-appear 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+      }
+
+      .member-card:nth-child(1) { animation-delay: 100ms; }
+      .member-card:nth-child(2) { animation-delay: 250ms; }
+      .member-card:nth-child(3) { animation-delay: 400ms; }
+
+      .member-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(127, 245, 229, 0.6);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(127, 245, 229, 0.3);
+      }
+
+      .member-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--cyan-light), transparent);
+        transition: left 600ms ease;
+      }
+
+      .member-card:hover::before {
+        left: 100%;
+      }
+
+      .role-tag {
+        align-self: flex-start;
+        padding: 4px 12px;
+        margin-bottom: 14px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: var(--cyan-light);
+        background: rgba(8, 126, 139, 0.25);
+        border: 1px solid rgba(127, 245, 229, 0.35);
+        border-radius: 20px;
+        text-transform: uppercase;
+      }
+
+      .member-card h2 {
+        margin: 0 0 8px;
+        color: var(--foam);
+        font-size: 1.25rem;
+      }
+
+      .member-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      @keyframes card-appear {
+        from { opacity: 0; transform: translateY(24px) scale(0.96); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      footer {
+        padding: 30px;
+        color: var(--muted);
+        text-align: center;
+        font-size: 0.85rem;
+        position: relative;
+        z-index: 10;
+      }
+
+      @media (max-width: 600px) {
+        header { padding: 20px; }
+        main { padding: 54px 20px; }
+        .member-list { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Canvas untuk Objek 3D (Bintang & Planet) -->
+    <canvas id="space-bg"></canvas>
+
+    <header>
+      <nav aria-label="Navigasi utama">
+        <p class="logo">XI RPL 09</p>
+        <span class="school-link">
+          <a href="kontak.html">Kontak</a>
+          <a class="back-link" href="index.html">Kembali ke Beranda</a>
+        </span>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow">Daftar Anggota</p>
+        <h1>Tim XI RPL 09.</h1>
+        <p>Pengembang dan pengelola di balik pembuatan website XI RPL 09.</p>
+      </section>
+
+      <section class="member-list" aria-label="Daftar anggota tim">
+        <article class="member-card">
+          <span class="role-tag">Project Manager</span>
+          <h2>Denis Pirmansyah</h2>
+          <p>Bertanggung jawab dalam merencanakan, mengelola jalannya proyek, dan memastikan alur kerja tim berjalan dengan lancar.</p>
+        </article>
+
+        <article class="member-card">
+          <span class="role-tag">Developer</span>
+          <h2>Razq Sondari</h2>
+          <p>Mengembangkan antarmuka serta struktur kode untuk halaman Anggota dan Kontak website XI RPL 09.</p>
+        </article>
+
+        <article class="member-card">
+          <span class="role-tag">Developer</span>
+          <h2>Fatir Alfath Sandila</h2>
+          <p>Mengembangkan antarmuka dan penataan konten untuk halaman Profil website XI RPL 09.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>&copy; 2026 XI RPL 09</footer>
+
+    <!-- Script Rendering 3D Space Scene -->
+    <script>
+      const canvas = document.getElementById('space-bg');
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+
+      // 1. Bintang-bintang (Starfield)
+      const starsGeometry = new THREE.BufferGeometry();
+      const starsCount = 1500;
+      const starPositions = new Float32Array(starsCount * 3);
+
+      for(let i = 0; i < starsCount * 3; i++) {
+        starPositions[i] = (Math.random() - 0.5) * 1000;
+      }
+      starsGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+
+      const starsMaterial = new THREE.PointsMaterial({
+        color: 0xffffff,
+        size: 1.2,
+        transparent: true,
+        opacity: 0.8
+      });
+      const starField = new THREE.Points(starsGeometry, starsMaterial);
+      scene.add(starField);
+
+      // 2. Planet 3D Biru Tua di Tengah (Ukuran Besar)
+      const planetGeo = new THREE.SphereGeometry(5, 64, 64);
+      const planetMat = new THREE.MeshStandardMaterial({
+        color: 0x0a2540,
+        roughness: 0.4,
+        wireframe: true
+      });
+      const planet = new THREE.Mesh(planetGeo, planetMat);
+      planet.position.set(0, 0, 0);
+      scene.add(planet);
+
+      // 3. Cincin Planet
+      const ringGeo = new THREE.RingGeometry(6.5, 9, 64);
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: 0x1d4ed8,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.6,
+        wireframe: true
+      });
+      const ring = new THREE.Mesh(ringGeo, ringMat);
+      ring.position.set(0, 0, 0);
+      ring.rotation.x = Math.PI / 2.5;
+      scene.add(ring);
+
+      // 4. Pencahayaan
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+      scene.add(ambientLight);
+
+      const pointLight = new THREE.PointLight(0x3b82f6, 2, 100);
+      pointLight.position.set(10, 10, 10);
+      scene.add(pointLight);
+
+      camera.position.z = 12;
+
+      // Animasi 3D Rotasi
+      function animate() {
+        requestAnimationFrame(animate);
+
+        starField.rotation.y += 0.0003;
+        starField.rotation.x += 0.0001;
+
+        planet.rotation.y += 0.003;
+        ring.rotation.z -= 0.002;
+
+        renderer.render(scene, camera);
+      }
+
+      animate();
+
+      // Resizing Responsif
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    </script>
+  </body>
+</html>
