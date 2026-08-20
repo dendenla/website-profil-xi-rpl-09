@@ -1,12 +1,11 @@
 # website-profil-xi-rpl-09
 Website ini merupakan proyek pembelajaran kolaborasi GIT DAN GITHUB
 
-
 anggota:
 
-Denis Pirmansyah sebagai project manajer
-Razq Sondari Putra: fitur kontak  dan fitur anggota
-fatir alfath sandila: fitur profil  
+Denis Pirmansyah sebagai project manajer  
+Razq Sondari Putra: fitur kontak  dan fitur anggota   
+fatir alfath sandila: fitur profil    
 
 
 Challenge 2: Jawaban Pertanyaan
@@ -33,7 +32,7 @@ git commit -m "Menambahkan halaman profil kelas" memberikan penjelasan yang jela
 
 Mana yang lebih baik: Pesan kedua ("Menambahkan halaman profil kelas") jauh lebih baik karena memudahkan tim melacak riwayat perubahan kode di masa mendatang.
 
-agian U: Pertanyaan Analisis
+bagian U: Pertanyaan Analisis
 
 Apa fungsi git pull?
 
@@ -47,7 +46,7 @@ Mengapa main harus dijaga agar tetap stabil?
 
 Jawaban: Karena branch main merepresentasikan versi produk akhir (siap dirilis/di-deploy) yang digunakan oleh klien atau penggunan akhir. Jika main rusak, maka seluruh aplikasi atau website akan mengalami crash/gangguan.  
 
-agian X: Pertanyaan Conflict
+bagian X: Pertanyaan Conflict
 
 Mengapa conflict terjadi?
 
@@ -63,4 +62,4 @@ Jawaban: Developer yang terlibat langsung dalam pembuatan kode tersebut bersama 
 
 Mengapa komunikasi antar programmer penting?
 
-Jawaban: Komunikasi yang baik membantu mencegah tumpang tindih pengerjaan fitur yang sama, mempercepat penyelesaian konflik kode, dan memastikan standar pengerjaan proyek berjalan konsisten.  
+Jawaban: Komunikasi yang baik membantu mencegah tumpang tindih pengerjaan fitur yang sama, mempercepat penyelesaian konflik kode, dan memastikan standar pengerjaan proyek berjalan konsisten.   main
