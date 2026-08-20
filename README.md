@@ -1,5 +1,5 @@
 # website-profil-xi-rpl-09
-Website ini merupakan proyek pembelajaran kolaborasi Git dan GitHub.
+Website ini merupakan proyek pembelajaran kolaborasi GIT DAN GITHUB
 
 
 anggota:
