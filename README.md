@@ -65,6 +65,7 @@ Website ini merupakan proyek pembelajaran kolaborasi GIT DAN GITHUB.
 
 ## AE. Refleksi Akhir
 
+
 * **Sebelum belajar GitHub, saya berpikir bahwa...** GitHub itu cuma tempat *backup* kodingan atau pajangan portofolio saja, dan kalau kerja kelompok tinggal kirim-kiriman folder ZIP lewat WA.
 * **Setelah melakukan kolaborasi dengan GitHub, saya memahami bahwa...** GitHub sangat berguna untuk mengatur versi kodingan bersama tim. Kita bisa bagi-bagi tugas pakai *branch* tanpa takut kodingan teman ketimpa, lalu menggabungkan kodenya secara praktis.
 * **Kesalahan/error yang saya alami mengajarkan saya bahwa...** mendapat *merge conflict* atau *error* saat *push* mengajarkan untuk tidak panik, membaca pesan *error*-nya dengan teliti, dan wajib hukumnya melakukan `git pull` sebelum mulai ngoding agar kode selalu aman.
