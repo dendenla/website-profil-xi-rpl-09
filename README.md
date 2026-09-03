@@ -63,3 +63,22 @@ Jawaban: Developer yang terlibat langsung dalam pembuatan kode tersebut bersama 
 Mengapa komunikasi antar programmer penting?
 
 Jawaban: Komunikasi yang baik membantu mencegah tumpang tindih pengerjaan fitur yang sama, mempercepat penyelesaian konflik kode, dan memastikan standar pengerjaan proyek berjalan konsisten.   main
+
+
+
+
+Sebelum belajar GitHub, saya berpikir bahwa...  
+
+ngoding bareng itu cukup kirim file lewat WhatsApp atau Flashdisk
+
+Setelah melakukan kolaborasi dengan GitHub, saya memahami bahwa...
+
+kerja tim jauh lebih terstruktur, kita bisa ngerjain file yang sama tanpa takut ketimpa.
+
+Kesalahan/error yang saya alami mengajarkan saya bahwa...
+
+Kesalahan/error yang saya alami mengajarkan saya bahwa konflik kode dan salah branch itu wajar, kuncinya ada di teliti baca pesan error dan rajin
+
+Jika saya bekerja sebagai programmer dalam sebuah tim, saya akan...
+
+Jika saya bekerja sebagai programmer dalam sebuah tim, saya akan selalu rajin bikin branch sendiri sesuai fitur dan komunikasi aktif sebelum merge kode.
