@@ -1,30 +1,31 @@
 # website-profil-xi-rpl-09
-Website ini merupakan proyek pembelajaran kolaborasi Git dan GitHub.
 
+Website ini merupakan proyek pembelajaran kolaborasi GIT DAN GITHUB
 
 anggota:
 
-<<<<<<< Updated upstream
+HEAD
+Updated upstream
 Denis Pirmansyah sebagai project manajer dan fitur anggota
 Razq Sondari Putra: fitur kontak
 fatir alfath sandila: fitur profil
-=======
-Denis Pirmansyah sebagai project manajer  
-Razq Sondari Putra: fitur kontak  dan fitur anggota   
-fatir alfath sandila: fitur profil    
 
+main
+Denis Pirmansyah sebagai project manajer  
+Razq Sondari Putra: fitur kontak dan fitur anggota  
+fatir alfath sandila: fitur profil
 
 Challenge 2: Jawaban Pertanyaan
 
 Pertanyaan: Apa arti hasil git status?
 
-Jawaban: git status berfungsi untuk menampilkan kondisi repositori lokal saat ini. Perintah ini menunjukkan branch yang sedang aktif, file mana yang telah diubah (modified), file baru yang belum dilacak (untracked), serta file yang sudah siap di-commit (staged).  
+Jawaban: git status berfungsi untuk menampilkan kondisi repositori lokal saat ini. Perintah ini menunjukkan branch yang sedang aktif, file mana yang telah diubah (modified), file baru yang belum dilacak (untracked), serta file yang sudah siap di-commit (staged).
 
 Challenge 3: Analisis
 
 Pertanyaan: Mengapa setiap developer tidak langsung bekerja pada main?
 
-Jawaban: Branch main merupakan kode utama yang harus selalu stabil dan bebas dari bug. Bekerja di branch fitur terpisah mencegah kerusakan sistem utama jika terjadi error, serta memungkinkan banyak developer bekerja secara bersamaan tanpa saling menimpa pekerjaan satu sama lain.  
+Jawaban: Branch main merupakan kode utama yang harus selalu stabil dan bebas dari bug. Bekerja di branch fitur terpisah mencegah kerusakan sistem utama jika terjadi error, serta memungkinkan banyak developer bekerja secara bersamaan tanpa saling menimpa pekerjaan satu sama lain.
 
 Challenge 5: Analisis Commit
 
@@ -50,7 +51,7 @@ Jawaban: Kode di komputer lokal akan ketinggalan zaman (outdated). Hal ini dapat
 
 Mengapa main harus dijaga agar tetap stabil?
 
-Jawaban: Karena branch main merepresentasikan versi produk akhir (siap dirilis/di-deploy) yang digunakan oleh klien atau penggunan akhir. Jika main rusak, maka seluruh aplikasi atau website akan mengalami crash/gangguan.  
+Jawaban: Karena branch main merepresentasikan versi produk akhir (siap dirilis/di-deploy) yang digunakan oleh klien atau penggunan akhir. Jika main rusak, maka seluruh aplikasi atau website akan mengalami crash/gangguan.
 
 bagian X: Pertanyaan Conflict
 
@@ -68,10 +69,7 @@ Jawaban: Developer yang terlibat langsung dalam pembuatan kode tersebut bersama 
 
 Mengapa komunikasi antar programmer penting?
 
-Jawaban: Komunikasi yang baik membantu mencegah tumpang tindih pengerjaan fitur yang sama, mempercepat penyelesaian konflik kode, dan memastikan standar pengerjaan proyek berjalan konsisten.   main
-
-
-
+Jawaban: Komunikasi yang baik membantu mencegah tumpang tindih pengerjaan fitur yang sama, mempercepat penyelesaian konflik kode, dan memastikan standar pengerjaan proyek berjalan konsisten. main HEAD
 
 AE. REFLEKSI AKHIR
 
@@ -90,4 +88,5 @@ Dapet merge conflict atau error pas push tuh ngajarin banget buat gak panik, raj
 Jika saya bekerja sebagai programmer dalam sebuah tim, saya akan...
 
 Bikin branch sendiri buat tiap fitur biar gak berantakan, rajin commit pakai pesan yang jelas, dan rajin komunikasi sama tim biar gak saling tabrakan pas merge kode.
->>>>>>> Stashed changes
+Stashed changes
+main
