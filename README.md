@@ -3,7 +3,7 @@
 Website ini merupakan proyek pembelajaran kolaborasi GIT DAN GITHUB.
 
 ### Anggota Tim:
-* **Denis Pirmansyah:** Project Manager & Fitur Anggota
+* **Denis Pirmansyah:** Project Manager
 * **Razq Sondari Putra:** Fitur Kontak & Fitur Anggota
 * **Fatir Alfath Sandila:** Fitur Profil
 
@@ -65,7 +65,8 @@ Website ini merupakan proyek pembelajaran kolaborasi GIT DAN GITHUB.
 
 ## AE. Refleksi Akhir
 
+
 * **Sebelum belajar GitHub, saya berpikir bahwa...** GitHub itu cuma tempat *backup* kodingan atau pajangan portofolio saja, dan kalau kerja kelompok tinggal kirim-kiriman folder ZIP lewat WA.
 * **Setelah melakukan kolaborasi dengan GitHub, saya memahami bahwa...** GitHub sangat berguna untuk mengatur versi kodingan bersama tim. Kita bisa bagi-bagi tugas pakai *branch* tanpa takut kodingan teman ketimpa, lalu menggabungkan kodenya secara praktis.
 * **Kesalahan/error yang saya alami mengajarkan saya bahwa...** mendapat *merge conflict* atau *error* saat *push* mengajarkan untuk tidak panik, membaca pesan *error*-nya dengan teliti, dan wajib hukumnya melakukan `git pull` sebelum mulai ngoding agar kode selalu aman.
-* **Jika saya bekerja sebagai programmer dalam sebuah tim, saya akan...** membuat *branch* sendiri untuk tiap fitur agar tidak berantakan, rajin melakukan *commit* dengan pesan yang jelas, serta aktif berkomunikasi dengan tim agar tidak terjadi tabrakan saat *merge* kode  
+* **Jika saya bekerja sebagai programmer dalam sebuah tim, saya akan...** membuat *branch* sendiri untuk tiap fitur agar tidak berantakan, rajin melakukan *commit* dengan pesan yang jelas, serta aktif berkomunikasi dengan tim agar tidak terjadi tabrakan saat *merge* kode
